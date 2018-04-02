@@ -1,0 +1,75 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+
+//Extra large: ≥1200px
++media-breakpoint-down(xl)
+	.upload_video
+		padding: 5%
+//Large: ≥992px
++media-breakpoint-down(lg)
+	.successfull .soc img
+		width: 8vw
+	.footer .nav .nav_menu
+		display: none
+	.footer .nav .circle
+		display: inline-block		
+//Medium: ≥768px
++media-breakpoint-down(md)
+	.successful .successful_content .soc
+		width: 100%
+//Small: ≥576px
++media-breakpoint-down(sm)
+	.home
+		padding: 54px 5%
+	.upload
+		padding: 65px 3%	
+	.change_product .popup, .login .popup, .not_supported .popup
+		width: 98%
+	.upload .upload_section .video .video_thumbnail:before
+		background-size: 100% 100%
+	.upload .upload_section .video .video_thumbnail
+		height: 240px
+	.upload .publish .loading_bar
+		padding: 0 10px			
+	.upload .product .steps .step1 .step1_btn
+		width: 90%
+		font-size: 1em
+	.successful .successful_content
+		width: 90%
+	.successful .successful_content .upload_title,
+	.successful .successful_content .share	
+		font-size: 40px
+
+	.upload .product .steps .step2
+		flex-wrap: wrap
+	.upload .product .steps .step2 .product .decor_triangle
+		display: none
+	.upload .product .steps .step2 .product .product_top .product_img img,
+	.upload .product .steps .step3 .product .product_top .product_img img	
+		width: 100%		
+	.upload .product .steps .step2 .product,
+	.upload .product .steps .step2 .prod-corr	
+		flex-basis: 100%			
+//Extra small: >0
++media-breakpoint-down(xs)
+
+
+/*==========  Mobile First  ==========*/
+
+//Extra small: <576px
++media-breakpoint-up(xs)
+
+//Small: ≤576px
++media-breakpoint-up(sm)
+
+//Medium: ≤768px
++media-breakpoint-up(md)
+
+//Large: ≤992px
++media-breakpoint-up(lg)
+
+//Extra large: ≤1200px
++media-breakpoint-up(xl)

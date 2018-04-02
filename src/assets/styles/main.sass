@@ -1,0 +1,710 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+html, body
+	height: 100%	
+
+.hide
+	display: none!important
+.flex
+	display: -webkit-flex!important
+	display: -moz-flex!important
+	display: -ms-flex!important
+	display: -o-flex!important
+	display: flex!important
+	align-items: center
+	justify-content: space-between		
+
+// .container, .row
+// 	height: 100%	
+// 	width: 100%
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.4
+	font-family: $default-font
+	overflow-x: hidden
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+	input, textarea
+			border: #666 1px solid
+			outline: none
+			&:focus:required:invalid
+				border-color: red
+			&:required:valid
+				border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+.align-right
+	justify-content: flex-end
+
+.circle
+	height: 50px
+	width: 50px
+	display: inline-block
+	background-color: #fff
+	border-radius: 50%
+
+.active_btn
+	background-color: #23cf5f
+	&:hover
+		box-shadow: 1px 1px 1px #333	
+
+.home
+	position: fixed
+	padding: 45px 90px
+	left: 0
+	top: 0
+	height: 100%
+	width: 100%
+	background-color: #000
+	z-index: 1
+	.home_header
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		justify-content: space-between
+		height: 70px
+		.upload_link
+			color: #fff
+			font-size: 38px
+			text-transform: uppercase
+			padding: 0
+			margin: 0
+			text-decoration: none
+			cursor: pointer
+	.home_main
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		height: 100%
+		.title	
+			margin: auto	
+			text-align: center
+			h1
+				font-size: 27px
+				color: #fff
+				font-weight: 300
+				margin: 60px auto 25px
+	.home_footer
+		height: 100px		
+
+.first-screen
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	// height: 100vh
+
+.header
+	height: 100px
+	padding: 0 5%
+	background-color: #fd3649	
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+
+	.logout
+		display: inline-block	
+		cursor: pointer
+		align-self: center
+		position: relative
+		.logout_popup
+			position: absolute
+			background-color: #fff
+			top: 70px
+			right: 0
+			padding: 8px
+			width: 350px
+			border-radius: 6px
+			box-shadow: -1px 1px 3px 3px #ebebeb
+			z-index: 2
+			.user
+				padding: 18px
+				.user_name
+					font-size: 32px
+				.user_mail	
+					font-size: 22px
+					color: #a1a1a1
+			hr
+				color: #ebebeb
+			.out	
+				font-size: 28px
+				color: #fd3649
+				text-align: center
+
+.upload
+	padding: 65px 10%	
+	.upload_section
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+		.video
+			margin-bottom: 40px
+			max-width: 660px
+			width: 100%
+			.video_thumbnail
+				width: 100%
+				height: 330px	
+				background-color: #ebebeb
+				position: relative
+				cursor: pointer
+				&:before
+					content: ""
+					display: block	
+					position: absolute
+					left: 0
+					top: 0
+					width: 100%
+					height: 100%
+					background-image: url(../img/thumbnail.png)
+				.text_rotate
+					font-size: 80px
+					text-transform: uppercase
+					font-weight: 100
+					color: #130606
+					transform: rotate(45deg)
+	.publish
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 40px
+		.loading_bar
+			height: 45px
+			width: 100%
+			border-radius: 20px
+			border: 5px solid #000	
+			text-align: center
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: center
+			justify-content: center
+			.progressbar
+				width: 80%
+				height: 10px
+				background-color: #c8c8c8
+				margin-right: 30px
+				.progressbar_value
+					width: 0
+					height: 100%
+					background-color: #000	
+						
+		.info
+			font-size: 32px
+			margin-bottom: 84px
+			a
+				color: #0066ff	
+		.publish_btn
+			height: 50px
+			width: 250px
+			border-radius: 20px
+			border: none	
+			text-transform: uppercase
+			text-align: center
+			cursor: pointer
+			color: #fff
+			font-size: 32px		
+			transition-duration: 0.4s
+	.product
+
+		.top
+			margin-top: 45px
+			h1
+				text-align: center
+				font-size: 32px
+				font-weight: 500
+			.mini-products
+				margin-top: 20px
+				.mini-products_item		
+					height: 100px
+					width: 100px
+					margin-right: 50px
+					float: left
+					border-radius: 7px
+					border: 6px solid #a15df5
+					background-color: #ebebeb
+					text-align: center
+					display: -webkit-flex
+					display: -moz-flex
+					display: -ms-flex
+					display: -o-flex
+					display: flex
+					align-items: center
+					justify-content: center
+					cursor: pointer
+					img
+						width: 100%
+				.add_item
+					height: 100px
+					width: 100px
+					border-radius: 7px
+					border: 6px dashed #ebebeb
+					text-align: center
+					display: -webkit-flex
+					display: -moz-flex
+					display: -ms-flex
+					display: -o-flex
+					display: flex
+					justify-content: center
+					align-items: center
+					cursor: pointer
+					span
+						font-size: 32px
+						color: #ebebeb
+		.steps
+			min-height: 342px
+			width: 100%
+			margin-top: 27px
+			.step3
+				height: 100%
+				padding: 40px 45px
+				border-radius: 6px
+				border: 10px solid #000 
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				justify-content: space-between
+				flex-wrap: wrap
+				.product
+					flex-basis: 60%
+					.product_top	
+						.product_img
+							display: inline-block
+							vertical-align: middle
+							img
+								height: 170px
+								
+						.prod-info
+							max-width: 370px
+							display: inline-block
+							vertical-align: middle
+							margin-left: 30px
+							h2.title
+								font-size: 32px
+								color: #000
+								font-weight: 500
+							.price
+								font-size: 32px
+								font-weight: 900
+					.product_bottom
+						padding: 20px 0 0 30px			
+				.select_btn
+					flex-basis: 40%
+					padding-top: 20px
+					button
+						height: 50px
+						width: 250px
+						font-size: 26px
+						display: block
+						background: none
+						margin: 0 auto 20px
+						border: none
+						color: #fff
+						cursor: pointer
+					.view
+						border-radius: 6px
+						border: 5px solid #000
+						font-size: 32px
+						color: #000
+					.change
+						background-color: #e1e1e1	
+
+
+			.step2
+				height: 100%
+				width: 100%
+				padding: 25px
+				background-color: #000
+				border-radius: 6px
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				justify-content: space-between
+				.product
+					background-color: #fff
+					width: 60%
+					flex-basis: 60%
+					position: relative
+					padding: 25px
+					overflow: hidden
+					.product_top	
+						.product_img
+							display: inline-block
+							vertical-align: middle
+							img
+								height: 170px
+								
+						.prod-info
+							max-width: 370px
+							display: inline-block
+							vertical-align: middle
+							margin-left: 30px
+							h2.title
+								font-size: 32px
+								color: #000
+							.price
+								font-size: 32px
+								color: #8560a8	
+					.product_bottom
+						padding: 20px 0 0 30px
+						.product_logo
+					.decor_triangle	
+						position: absolute
+						top: calc(50% - 60px)
+						right: 0
+						border: 60px solid transparent	
+						border-right-color: #000	
+				.prod-corr
+					text-align: center
+					flex-basis: 40%
+					padding-top: 30px
+					.prod-corr_title
+						text-align: center	
+						font-size: 32px
+						color: #fff
+						font-weight: 500	
+						margin-bottom: 38px
+					button
+						height: 50px
+						width: 250px
+						display: block
+						margin: 0 auto 20px
+						border: none
+						color: #fff
+						cursor: pointer
+					.accept	
+						font-size: 32px
+						text-transform: uppercase
+						font-weight: 500
+						background-color: #00a651
+					.try_link	
+						background-color: #898989
+						font-size: 26px
+
+			.step1	
+				height: 100%
+				text-align: center		
+				padding-top: 114px
+				border-radius: 6px
+				border: 6px solid #ebebeb
+				.step1_btn
+					padding: 20px 25px
+					margin-bottom: 20px
+					line-height: 1
+					background-color: #8560a8
+					border: none
+					border-radius: 6px
+					color: #fff
+					font-size: 32px
+					font-weight: 600 
+					cursor: pointer
+					transition-duration: 0.4s
+					box-sizing: border-box
+					&:hover
+						box-shadow: inset 0px 0px 4px #8560a8
+						background: none
+						color: #8560a8
+				p
+					font-size: 24px
+					color: #a1a1a1
+						
+.content
+	height: calc(100% - 205px)
+
+.upload_video
+	padding: 98px 212px
+	.upl_file
+		height: 695px
+		width: 100%
+		border: 2px dashed #ebebeb
+		position: relative
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		position: relative
+		cursor: pointer
+		input[type="file"]
+			position: absolute
+			height: 100%
+			width: 100%
+			opacity: 0
+		.target
+			margin: auto
+			text-align: center
+			
+			.descr
+				margin-top: 60px
+				font-size: 32px
+				color: #202020
+				text-align: center
+				span
+					font-weight: 700	
+	.video_thumbnail
+		margin-top: 160px
+		.video_thumbnail__item
+			margin: 44px 0
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			flex-wrap: wrap
+			.video-screen
+				width: 596px
+				height: 300px
+				background-color: #ebebeb
+				margin-right: 22px
+			.desciption
+				padding: 70px 0
+				width: 50%
+				p
+					font-size: 32px
+					font-weight: bold
+					color: #000
+				.statistics
+					width: 70%
+					font-size: 28px
+					font-weight: 300	
+					display: -webkit-flex
+					display: -moz-flex
+					display: -ms-flex
+					display: -o-flex
+					display: flex
+					justify-content: space-between
+
+.successful
+	text-align: center
+	// min-height: calc(100vh - 200px)
+	height: 100%
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	.successful_content
+		margin: auto
+		width: 60%
+		.upload_title
+			font-size: 72px
+			font-weight: bold
+			margin: 0
+			cursor: pointer
+		.share
+			font-size: 72px
+			margin: 0
+		.soc
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex			
+			justify-content: space-around
+			width: 60%
+			margin: 75px 0 54px
+			margin: 7.5% auto 5.4%
+
+		.skip
+			font-size: 32px
+			color: #a1a1a1	
+
+.login,.change_product,.not_supported
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: center
+	align-items: center
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 2
+	height: 100%
+	width: 100%	
+	background-color: rgba(66,56,56,0.6)	
+	.popup
+		height: 504px
+		width: 502px
+		background-color: #fff
+		border-radius: 7px
+		position: relative
+		.popup_close
+			position: absolute
+			right: -35px
+			top: -45px
+			font-size: 42px
+			color: #a1a1a1	
+			cursor: pointer
+		.popup_header
+			height: 105px
+			line-height: 105px
+			background-color: #a15df5
+			color: #fff
+			border-radius: 7px
+			text-align: center
+			font-size: 34px
+			font-weight: bold
+		.popup_form
+			padding: 36px
+			text-align: center
+			.popup_password
+				position: relative
+				.popup_password__show
+					position: absolute
+					top: 5px 
+					right: 0px
+					font-weight: bold
+					font-size: 26px
+					color: #b0b0b0
+					text-transform: uppercase
+			input
+				display: block
+				border: none
+				border-bottom: 1px solid #d7d7d7
+				height: 50px
+				width: 100%	
+				margin-bottom: 40px
+				color: #b0b0b0
+				font-size: 24px
+
+			.popup_btn
+				height: 75px
+				width: 250px
+				margin: 0 0 40px 0
+				border-radius: 7px
+				border: 5px solid #000
+				background: none
+				color: #000
+				font-size: 22px
+				font-weight: bold
+				cursor: pointer
+				transition-duration: 1s
+				&:hover
+					background-color: #000
+					color: #fff
+			p
+				span	
+					font-size: 18px
+					color: #a1a1a1
+					vertical-align: middle
+				a
+					color: #fd3649	
+					vertical-align: middle
+
+.change_product,.not_supported
+	text-align: center
+	.popup_header
+		height: 156px
+	h1
+		font-size: 28px
+		color: #000
+		margin-top: 32px
+
+	p
+		font-size: 22px
+		color: #000	
+		width: 70%
+		margin: 30px auto 30px
+	.back-link
+		font-size: 18px
+		color: #a1a1a1
+		margin: 10px auto 0
+		cursor: pointer	
+	.popup_btn
+		height: 75px
+		width: 250px
+		margin: 0 0 10px 0
+		border-radius: 7px
+		border: 5px solid #000
+		background: none
+		color: #000
+		font-size: 22px
+		font-weight: bold
+		cursor: pointer
+		transition-duration: 1s
+		&:hover
+			background-color: #000
+			color: #fff							
+
+.footer
+	height: 105px
+	padding: 0 5%
+	// display: -webkit-flex
+	// display: -moz-flex
+	// display: -ms-flex
+	// display: -o-flex
+	// display: flex
+	// justify-content: space-between
+	// align-items: center
+	color: #fff
+	background-color: #000	
+	.logo
+		font-family: 'grandhotel-regular-webfont'	
+		font-size: 68px
+		line-height: 1
+		cursor: pointer
+	.nav
+		width: 50%	
+		text-align: right
+		.circle
+			display: none
+		.nav_menu
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: space-between
+		a
+			color: #fff	
+			font-size: 32px
+
+
+
+@import "media" // Always at the end
