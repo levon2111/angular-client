@@ -4,10 +4,12 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {HomepageComponent} from './components/homepage/homepage.component';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import {UploadListComponent} from './components/upload-list/upload-list.component';
+import {AuthGuard} from './guards/auth.guard';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent, canActivate: []},
-  // {path: 'loginedUser', component: ContactUsComponent,canActivate: [AuthGuard]},
+  {path: 'uploads', component: UploadListComponent, canActivate: [AuthGuard]},
   {path: '**', component: PageNotFoundComponent},
 ];
 

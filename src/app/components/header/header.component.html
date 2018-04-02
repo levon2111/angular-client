@@ -1,0 +1,13 @@
+<header class="header align-right">
+  <div class="logout">
+    <span class="circle" (click)="showLogoutToggle()"></span>
+    <div class="logout_popup" *ngIf="show_logout">
+      <div class="user">
+        <div class="user_name">{{currentUser.username}}</div>
+        <div class="user_mail">{{currentUser.email}}</div>
+      </div>
+      <hr />
+      <div class="out" (click)="onClickLogout()">Log Out</div>
+    </div>
+  </div>
+</header>

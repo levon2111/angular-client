@@ -16,6 +16,10 @@ import {AuthGuard} from './guards/auth.guard';
 import {ValidationService} from './services/validation.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ValidationMessagesComponent} from './components/validation-messages/validation-messages.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { UploadListComponent } from './components/upload-list/upload-list.component';
+import {VideosService} from './services/videos.service';
 
 
 @NgModule({
@@ -24,7 +28,10 @@ import {ValidationMessagesComponent} from './components/validation-messages/vali
     PageNotFoundComponent,
     HomepageComponent,
     LoginModalComponent,
-    ValidationMessagesComponent
+    ValidationMessagesComponent,
+    HeaderComponent,
+    FooterComponent,
+    UploadListComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,8 @@ import {ValidationMessagesComponent} from './components/validation-messages/vali
     AuthService,
     AppConfigs,
     AuthGuard,
-    ValidationService
+    ValidationService,
+    VideosService,
   ],
   entryComponents: [
     LoginModalComponent

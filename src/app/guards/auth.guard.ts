@@ -22,7 +22,6 @@ export class AuthGuard implements CanActivate {
         this.router.navigateByUrl('/');
         this.modalService.open(LoginModalComponent);
       }
-
       return isAuthenticated;
     }).take(1);
   }

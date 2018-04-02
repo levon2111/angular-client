@@ -54,7 +54,7 @@ export class LoginModalComponent implements OnInit {
       const observer = {
         next: (user: User) => {
           this.activeModal.close();
-          this.router.navigateByUrl('/asdad');
+          this.router.navigateByUrl('/uploads');
         },
         error: (error) => {
           if (error.non_field_errors) {

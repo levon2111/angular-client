@@ -23,7 +23,7 @@
       <div *ngIf="show_error_message">
         <p class="error-message">Unable to log in with provided credentials.</p>
       </div>
-      <button class="popup_btn" type="submit">Log In</button>
+      <button class="popup_btn" type="submit" (click)="onSubmit(loginForm.value)">Log In</button>
       <p><span>Don’t have an account? </span><a href="">Download Heartface now</a>
         <img src="../../../../assets/img/icon_smile.png" alt="icon_smile"></p>
     </form>

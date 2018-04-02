@@ -53,7 +53,7 @@ export class AuthService {
     this.saveToken(token);
     this.currentUserSubject.next(user);
     this.isAuthenticatedSubject.next(true);
-    const user_id = user.id.toString();
+    const user_id = user.id ? user.id.toString() : user.user.id.toString() ;
     localStorage.setItem('user_id', btoa(user_id));
   }
 
