@@ -15,6 +15,7 @@ import {AppConfigs} from './components/configs';
 import {AuthGuard} from './guards/auth.guard';
 import {ValidationService} from './services/validation.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ValidationMessagesComponent} from './components/validation-messages/validation-messages.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     PageNotFoundComponent,
     HomepageComponent,
-    LoginModalComponent
+    LoginModalComponent,
+    ValidationMessagesComponent
   ],
   imports: [
     BrowserModule,

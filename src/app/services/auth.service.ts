@@ -48,12 +48,12 @@ export class AuthService {
     }
   }
 
-  setAuth(user: User): void {
+  setAuth(user: any): void {
     const token = user.key ? user.key : this.getToken();
     this.saveToken(token);
     this.currentUserSubject.next(user);
     this.isAuthenticatedSubject.next(true);
-    const user_id = user.user.id.toString();
+    const user_id = user.id.toString();
     localStorage.setItem('user_id', btoa(user_id));
   }
 
@@ -70,7 +70,7 @@ export class AuthService {
 
   login(credentials: Object): Observable<User> {
     return this.http
-      .post(`${AppConfigs.BACK_HOST}/api/v0/auth-users/login/`, credentials)
+      .post(`${AppConfigs.BACK_HOST}/rest-auth/login/`, credentials)
       .map((user: User) => {
         this.setAuth(user);
         return user;
@@ -83,7 +83,7 @@ export class AuthService {
     const headers = new HttpHeaders({'Authorization': `Token ${token}`});
 
     return this.http
-      .get(`${AppConfigs.BACK_HOST}/users/${user_id}/`, {headers: headers})
+      .get(`${AppConfigs.BACK_HOST}/api/v1/users/${user_id}/`, {headers: headers})
       .map((user: User) => {
         return user;
       });

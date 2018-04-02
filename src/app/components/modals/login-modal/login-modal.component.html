@@ -4,15 +4,24 @@
     <header class="popup_header">
       Log In
     </header>
-    <form class="popup_form">
-      <div class="popup_username">
-        <input type="text" placeholder="Username or Email">
+    <form class="popup_form" [formGroup]="loginForm" (submit)="onSubmit(loginForm.value)">
+      <div class="popup_username"
+           [class.has-error]="(loginForm.controls['username'].invalid && loginForm.controls['username'].touched) || (loginForm.controls['username'].invalid && loginForm['isSubmitted'])">
+        <input type="text" placeholder="Username or Email" formControlName="username">
+        <app-validation-messages [control]="loginForm.controls['username']" [valid]="loginForm.controls['username'].invalid && loginForm['isSubmitted']"></app-validation-messages>
       </div>
-      <div class="popup_password">
-        <input type="password" placeholder="Password">
-        <span class="popup_password__show">
+      <div class="popup_password" [class.has-error]="((loginForm.controls['password'].invalid && loginForm.controls['password'].touched) || (loginForm.controls['password'].invalid && loginForm['isSubmitted']))">
+        <input id="popup_password__show" type="password" placeholder="Password" formControlName="password">
+        <app-validation-messages [control]="loginForm.controls['password']" [valid]="loginForm.controls['password'].invalid && loginForm['isSubmitted']"></app-validation-messages>
+        <span (click)="togglePasswordShow()" *ngIf="!show_password" class="popup_password__show">
 					show
 				</span>
+        <span (click)="togglePasswordShow()" *ngIf="show_password" class="popup_password__show">
+					hide
+				</span>
+      </div>
+      <div *ngIf="show_error_message">
+        <p class="error-message">Unable to log in with provided credentials.</p>
       </div>
       <button class="popup_btn" type="submit">Log In</button>
       <p><span>Don’t have an account? </span><a href="">Download Heartface now</a>
